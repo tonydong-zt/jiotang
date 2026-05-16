@@ -54,8 +54,8 @@ class MLP(nn.Module):
         """
         for layer in self.net:
             if isinstance(layer, nn.Linear):
-                nn.init.xavier_uniform_(layer.weight)
-                nn.init.zeros_(layer.bias)
+                nn.init.xavier_uniform_(layer.weight)  #从一个均匀分布中随机取数来初始化权重
+                nn.init.zeros_(layer.bias)  #偏置初始化为0
 
     def forward(self, x):
         return self.net(x)
